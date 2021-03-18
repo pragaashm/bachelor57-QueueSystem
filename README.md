@@ -1,1 +1,1 @@
-# Bachelorgroup 57
+# Bachelorgruppe 57
