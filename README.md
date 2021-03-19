@@ -1,3 +1,4 @@
 # Bachelorgruppe 57
 
-Test_1
+Køsystem for studass.
+NTNU - IES
