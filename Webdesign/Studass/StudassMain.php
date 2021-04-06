@@ -63,7 +63,7 @@
 </table>
 <div class="accountForm" id="accountVer">
 <form method="post" action="/StudassLoginAction.php">
-    <label><strong>Logg inn for å endre session</strong></label><br> 
+    <label><strong>Logg inn for å skape eller endre sessions</strong></label><br> 
     <label>
     Brukernavn
     <input type="text" name="UserName">

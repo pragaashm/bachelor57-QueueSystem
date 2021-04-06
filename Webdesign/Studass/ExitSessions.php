@@ -9,7 +9,7 @@
 	$table_data = $tilkobling -> query($table_query);
 	while($rad = mysqli_fetch_array($table_data)){
 		$Plass = $rad["TableID"];
-		$remove_query = "UPDATE TableList SET TableSessionID = NULL WHERE TableID = '$Plass'"; //fjern sessionID fra alle bord med sessionID
+		$remove_query = "UPDATE TableList SET TableSessionID = NULL, TableUserID = NULL WHERE TableID = '$Plass'"; //fjern sessionID og logg av alle fra alle bord med sessionID
 		$tilkobling -> query($remove_query);
 		$delete_query = "DELETE FROM Queue WHERE QueueTableID = '$Plass'"; //fjern all data i køen
 		$tilkobling -> query($delete_query);
@@ -22,5 +22,5 @@
 		$tilkobling -> query($end_query);
 	};
 
-	header("Location: /StudassLogin.html"); //redirect
+	header("Location: /StudassMain.php"); //redirect
 ?>

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <style>
-<?php include'Studass.css'; ?>
+<?php 
+  include'Studass.css'; 
+  $tilkobling = mysqli_connect("localhost","Andy","Halla123","Backend");
+
+  if ($tilkobling -> connect_errno) {
+    echo "Failed to Connect:" . $tilkobling -> connect_errno;
+  };
+  $sessionID = $_GET["ID"];
+?>
 </style>
 <head>
   <title></title>
 </head>
-<body>
+<body onload="loadVals()">
 <form method="POST" action="/SessionInsert.php">
   <div>fagkode?</div>
   <div>start/slutt?</div>
@@ -125,12 +133,6 @@ __________________________________________________
 </div>
 </body>
 <?php
-    $tilkobling = mysqli_connect("localhost","Andy","Halla123","Backend");
-
-    if ($tilkobling -> connect_errno) {
-      echo "Failed to Connect:" . $tilkobling -> connect_errno;
-    };
-    $sessionID = $_GET["ID"];
     $SeatSQL = "SELECT TableID, TableSessionID FROM TableList WHERE TableSessionID IS NOT NULL"; //Henter listen over bord som allerede er med i en session
     $data = $tilkobling -> query($SeatSQL);
     echo "<script type='text/javascript'>";
@@ -177,10 +179,10 @@ __________________________________________________
       document.getElementById('PlassValgBoks').value = LocString; 
       });
     };
-    $(document).ready(function(){
+    function loadVals(){
       for (var i = Vals.length - 1; i >= 0; i--) { // skal preloade alle bord som du allerede har registert før på deg. funksjonen fungerer. bare får den ikke til å aktivere automatisk
         document.getElementById(Vals[i]).click();
-      }
-    });
+      };
+    };
 </script>
 </html>
