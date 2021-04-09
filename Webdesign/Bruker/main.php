@@ -10,29 +10,32 @@ $user_query = "SELECT TableUserID FROM TableList WHERE TableID = '$Table'";
 $user_data = $tilkobling -> query($user_query);
 $user_data_array = mysqli_fetch_array($user_data);
 $UserID = $user_data_array["TableUserID"];
-$name_query = "SELECT UserName FROM UserCred WHERE UserID = '$UserID'";
+$name_query = "SELECT UserName FROM UserCred WHERE UserID = '$UserID'"; //Henter info om bruker.
 $name_data = $tilkobling -> query($name_query);
 $name_data_array = mysqli_fetch_array($name_data);
 $Name = $name_data_array["UserName"];
+if (!isset($UserID)) {
+  header("Location: /Login.php/?ID=". $Table .""); //kaster brukeren ut om studass logger alle av
+};
 ?>
 <!DOCTYPE html>
 <script>
 function LogOut(){
 	if(confirm("Logg ut?")){
-		location.href = "/LogOff.php/?ID=<?php echo $Table; ?>";
+		location.href = "/LogOff.php/?ID=<?php echo $Table; ?>"; //logg av skript som bekrefter
 	};
 }
-function startTime() { //klokke
+function startTime() { //klokkefunksjon, ikke bygd selv
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
   m = checkTime(m);
-  document.getElementById('clock').innerHTML = 
+  document.getElementById('clock').innerHTML =
   h + ":" + m;
   var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  if (i < 10) {i = "0" + i};  
   return i;
 }
 </script>
@@ -51,15 +54,41 @@ function checkTime(i) {
 		Navn: <?php echo $Name; ?>
 	</element>
 	<element class="Logout">
-		<img src="https://image.flaticon.com/icons/png/512/25/25706.png" onClick="LogOut()" height="120px">
-	</element>
+      <input type="image" src="https://image.flaticon.com/icons/png/512/25/25706.png" id="1" onclick="LogOut()" height="120px" />
+  </element>
 </element>
 <element class="Interact">
 	<element class="Interact1"></element>
-	<form method="GET" class="Interact2" action="/AddQueue.php">
+	<form method="GET" action="/AddQueue.php">
 		<input type="hidden" name="ID" value="<?php echo $Table ?>">
-       <input type="submit" value="Legg til i kø" />
+       <input class="Interact2" id="0" type="submit" value="Legg til i kø" />
      </form>
 </element>
 </body>
 </html>
+<script type="text/javascript">
+var loc = 0; // 0 = kø knapp 1 = logg av knapp
+document.getElementById('0').focus();
+window.addEventListener("keydown", function (event) { 
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+    switch (event.key) {
+      case "ArrowDown":
+        document.getElementById('0').focus();
+        loc = 0;
+        break;
+      case "ArrowUp":
+        document.getElementById('1').focus();
+        loc = 1;
+        break;
+      default:
+        return; // Quit when this doesn't handle the key event.
+    }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
+// the last option dispatches the event to the listener first,
+// then dispatches event to window
+</script>

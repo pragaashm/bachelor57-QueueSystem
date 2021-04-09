@@ -159,7 +159,7 @@ __________________________________________________
     Sete = Plass[i].id;
     if (PlassSel[Sete] == 0 ){
       PlassSel[Sete] = 1;
-      Plass[i].style.backgroundColor = "#7FFF00";
+      Plass[i].style.backgroundColor = "#7FFF00"; // ved trykk endres fargen og korrisponderende index i PlassSel blir endret til 1
 
     } else if (PlassSel[Sete] == 1) {
       PlassSel[Sete] = 0;
@@ -172,7 +172,7 @@ __________________________________________________
         LocString = LocString + CurrentIndex;
         LocPlassSel[CurrentIndex] = 0; // bygger string som skal inn i php form og legger inn dynamisk
         CurrentIndex = LocPlassSel.indexOf(1);
-        if (CurrentIndex != -1) {
+        if (CurrentIndex != -1) { //avslutter når det ikke lenger er noen flere 1 i PlassSel
           LocString = LocString + ",";
         };
       };
@@ -180,7 +180,7 @@ __________________________________________________
       });
     };
     function loadVals(){
-      for (var i = Vals.length - 1; i >= 0; i--) { // skal preloade alle bord som du allerede har registert før på deg. funksjonen fungerer. bare får den ikke til å aktivere automatisk
+      for (var i = Vals.length - 1; i >= 0; i--) { // skal preloade alle bord som du allerede har registert før på deg.
         document.getElementById(Vals[i]).click();
       };
     };

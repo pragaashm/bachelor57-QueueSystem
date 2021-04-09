@@ -95,4 +95,7 @@
             location.href = "/ExitSessions.php";
         };
     };
+setTimeout(function(){
+   window.location.reload(1); //Refresher siden hvert 30. sekund
+}, 30000);
 </script>
