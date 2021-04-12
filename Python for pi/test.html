@@ -4,7 +4,18 @@
 		<title>Title</title>
 	</head>
 	<body>
-		<input type="text">
+		<input type="text" id="stuff">
+		<button id="btn">Test</button>
+		<script>
+			document.querySelector("#stuff").value = "test";
+			document.querySelector("#btn").focus();
+			document.querySelector("#btn").addEventListener("click",handler);
+			
+			function handler(){
+				
+				alert("Button was clicked!");
+			}
+		</script>
 	</body>
 </html>
 
