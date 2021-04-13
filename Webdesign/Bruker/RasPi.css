@@ -8,6 +8,8 @@ body{
 
 }
 
+html,body {overscroll-behavior: none;}
+
 .Header{
 	grid-area: "Header";
 	display: grid;
@@ -30,6 +32,8 @@ body{
 
 .Interact2{
 	grid-area: "Interact2";
+	height: 354px;
+	width: 400px;
 }
 
 .Language{

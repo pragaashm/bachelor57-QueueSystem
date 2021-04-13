@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <?php
-	$Table = $_GET["ID"];
+	$Table = $_GET["ID"]; // Hvert bord vil ha ett bordnummer som legges i URL via startopp program
 ?>
 <html>
+<style>
+<?php include'RasPi.css'; ?>
+</style>
 <head>
 </head>
 <body>

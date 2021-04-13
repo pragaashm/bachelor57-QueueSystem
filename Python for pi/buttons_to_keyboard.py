@@ -29,7 +29,7 @@ while True:
         sleep(delay_after_buttonpress)
 
     elif confirm_button.is_pressed:
-        keyboard.send("ctrl")
+        keyboard.send("enter")
         sleep(delay_after_buttonpress)
 
 

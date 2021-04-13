@@ -38,6 +38,6 @@
 ?>
 <script type="text/javascript">
 	function Back(){
-		location.href = "/StudassLogin.html";
+		location.href = "/StudassMain.php";
 	};
 </script>

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <style>
-<?php include'Studass.css'; ?>
+<?php 
+  include'Studass.css'; 
+  $tilkobling = mysqli_connect("localhost","Andy","Halla123","Backend");
+
+  if ($tilkobling -> connect_errno) {
+    echo "Failed to Connect:" . $tilkobling -> connect_errno;
+  };
+  $sessionID = $_GET["ID"];
+?>
 </style>
 <head>
   <title></title>
 </head>
-<body>
+<body onload="loadVals()">
 <form method="POST" action="/SessionInsert.php">
   <div>fagkode?</div>
   <div>start/slutt?</div>
@@ -125,12 +133,6 @@ __________________________________________________
 </div>
 </body>
 <?php
-    $tilkobling = mysqli_connect("localhost","Andy","Halla123","Backend");
-
-    if ($tilkobling -> connect_errno) {
-      echo "Failed to Connect:" . $tilkobling -> connect_errno;
-    };
-    $sessionID = $_GET["ID"];
     $SeatSQL = "SELECT TableID, TableSessionID FROM TableList WHERE TableSessionID IS NOT NULL"; //Henter listen over bord som allerede er med i en session
     $data = $tilkobling -> query($SeatSQL);
     echo "<script type='text/javascript'>";
@@ -157,7 +159,7 @@ __________________________________________________
     Sete = Plass[i].id;
     if (PlassSel[Sete] == 0 ){
       PlassSel[Sete] = 1;
-      Plass[i].style.backgroundColor = "#7FFF00";
+      Plass[i].style.backgroundColor = "#7FFF00"; // ved trykk endres fargen og korrisponderende index i PlassSel blir endret til 1
 
     } else if (PlassSel[Sete] == 1) {
       PlassSel[Sete] = 0;
@@ -170,17 +172,17 @@ __________________________________________________
         LocString = LocString + CurrentIndex;
         LocPlassSel[CurrentIndex] = 0; // bygger string som skal inn i php form og legger inn dynamisk
         CurrentIndex = LocPlassSel.indexOf(1);
-        if (CurrentIndex != -1) {
+        if (CurrentIndex != -1) { //avslutter når det ikke lenger er noen flere 1 i PlassSel
           LocString = LocString + ",";
         };
       };
       document.getElementById('PlassValgBoks').value = LocString; 
       });
     };
-    $(document).ready(function(){
-      for (var i = Vals.length - 1; i >= 0; i--) { // skal preloade alle bord som du allerede har registert før på deg. funksjonen fungerer. bare får den ikke til å aktivere automatisk
+    function loadVals(){
+      for (var i = Vals.length - 1; i >= 0; i--) { // skal preloade alle bord som du allerede har registert før på deg.
         document.getElementById(Vals[i]).click();
-      }
-    });
+      };
+    };
 </script>
 </html>

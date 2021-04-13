@@ -63,7 +63,7 @@
 </table>
 <div class="accountForm" id="accountVer">
 <form method="post" action="/StudassLoginAction.php">
-    <label><strong>Logg inn for å endre session</strong></label><br> 
+    <label><strong>Logg inn for å skape eller endre sessions</strong></label><br> 
     <label>
     Brukernavn
     <input type="text" name="UserName">
@@ -95,4 +95,7 @@
             location.href = "/ExitSessions.php";
         };
     };
+setTimeout(function(){
+   window.location.reload(1); //Refresher siden hvert 30. sekund
+}, 30000);
 </script>
