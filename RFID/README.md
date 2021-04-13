@@ -6,7 +6,6 @@ Dette gjøres gjennom "sudo raspi-config".
 
 Følgende packages er nødvendig utenom python3-dev og python 3-pip:
 
-"sudo pip3 install spidev"
-"sudo pip3 install mfrc522"
+"sudo pip3 install spidev", samt "sudo pip3 install mfrc522".
 
 
