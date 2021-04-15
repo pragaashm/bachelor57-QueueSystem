@@ -15,10 +15,9 @@ while rfid_Y:
             
             
             id, text = reader.read()
-            print(id)
-            print("Hallo!")
+
             keyboard.write(str(id))
-            sleep(1)
+            sleep(5)
 
         except:
                 GPIO.cleanup()
