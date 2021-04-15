@@ -15,8 +15,10 @@ while rfid_Y:
             
             
             id, text = reader.read()
-
+            keyboard.send('ctrl')
             keyboard.write(str(id))
+            keyboard.send('enter')
+
             sleep(5)
 
         except:
