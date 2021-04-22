@@ -59,7 +59,7 @@ function checkTime(i) {
 </element>
 <element class="Interact">
 	<element class="Interact1"></element>
-	<form method="GET" action="AddQueue.php">
+	<form method="GET" action="/AddQueue.php">
 		<input type="hidden" name="ID" value="<?php echo $Table ?>">
        <input class="Interact2" id="0" type="submit" value="Legg til i kø" />
      </form>

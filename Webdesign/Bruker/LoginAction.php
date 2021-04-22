@@ -23,8 +23,8 @@
 		echo "That table is occupied, or table number:" . $Table . " does not exist"; 
 		echo "<button onclick='Back()'>Tilbake</button>";
 	}else{
-		if ($user_data_array["UserLevel"] = 3) {
-			header("Location: /admin.php/?ID=". $Table ."");
+		if ($user_data_array["UserLevel"] == 3) {
+			header("Location: /Admin.php/?ID=". $Table ."");
 		}elseif ($user_data_array["UserLevel"] > 0 AND isset($user_data_array["UserName"])) { // kan evt byttes ut med ENUM
 			$data = "UPDATE TableList SET TableUserID = $userID WHERE TableID = '$Table'"; //sett deg på bordet
 			$tilkobling -> query($data);
