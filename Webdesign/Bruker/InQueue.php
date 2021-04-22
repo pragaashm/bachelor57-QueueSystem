@@ -53,7 +53,7 @@ function checkTime(i) {
 <html>
 <body onload="startTime()">
 <element class ="Header">
-	<img src="https://www.countryflags.com/wp-content/uploads/norway-flag-png-large.png" height="120px">
+	<img src="../Norge.png" height="120px">
 	<element class="info1">
 		Time: <div width = "40px"id="clock"></div> <br>
 		BordNummer: <?php echo $Table; ?>
@@ -62,7 +62,7 @@ function checkTime(i) {
 		Navn: <?php echo $Name; ?>
 	</element>
 	<element class="Logout">
-      <input type="image" src="https://image.flaticon.com/icons/png/512/25/25706.png" id="1" onclick="LogOut()" height="120px" />
+      <input type="image" src="../LoggAv.png" id="1" onclick="LogOut()" height="120px" />
   </element>
 </element>
 <element class="Interact">

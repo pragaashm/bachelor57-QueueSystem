@@ -1,7 +1,7 @@
 body{
 	display: grid;
-	height: 480px;
-	width: 800px;
+	height: 460px;
+	width: 780px;
 	grid-template-rows: 1fr 4fr;
 	border: black 1px solid;
 	grid-template-areas: "Header" "Interact";
@@ -14,7 +14,6 @@ html,body {overscroll-behavior: none;}
 	grid-area: "Header";
 	display: grid;
 	grid-template-columns: 2fr 3fr 3fr 1fr;	
-	border: black 1px dotted;
 	grid-template-areas: "Language info1 info2 Logout";
 }
 
@@ -23,7 +22,6 @@ html,body {overscroll-behavior: none;}
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: "Interact1 Interact2"
-	border: black 1px dotted;
 }
 
 .Interact1{
@@ -32,8 +30,8 @@ html,body {overscroll-behavior: none;}
 
 .Interact2{
 	grid-area: "Interact2";
-	height: 354px;
-	width: 400px;
+	height: 336px;
+	width: 390px;
 }
 
 .Language{

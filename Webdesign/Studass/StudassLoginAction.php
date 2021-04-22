@@ -22,7 +22,7 @@
 	if (isset($sessionID)) {
 		header("Location: /TableReg.php/?ID=". $sessionID .""); //hvis man har session id send de til bordregistrering
 	}else{
-		if ($user_data_array["UserLevel"] > 1) {
+		if ($user_data_array["UserLevel"] > 1) { //kan evt byttes ut med ENUM
 			$data = "INSERT INTO SessionList(SessionUserID) VALUES ($userID)";
 			$tilkobling -> query($data);
 			$session_query = "SELECT SessionID FROM SessionList WHERE SessionUserID = '$userID'"; //ellers lag session og send de videre

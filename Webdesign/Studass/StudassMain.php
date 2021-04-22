@@ -80,7 +80,9 @@
 </div>
 <button class="ChangeSession" onclick="ChangeSession()">Endre Session</button>
 <button class="LogOut" onclick="LogOut()">Avslutt Sessions</button>
-<div class="SeatMap"></div>
+<div class="SeatMap">
+<img src="../Bord.png">
+</div>
 </body>
 </html>
 <script type="text/javascript">
@@ -96,6 +98,6 @@
         };
     };
 setTimeout(function(){
-   window.location.reload(1); //Refresher siden hvert 30. sekund
+   location.href="/StudassMain.php"; //Refresher siden hvert 30. sekund
 }, 30000);
 </script>

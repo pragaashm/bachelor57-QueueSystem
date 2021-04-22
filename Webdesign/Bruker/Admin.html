@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<?php
-	$Table = $_GET["ID"]; // Hvert bord vil ha ett bordnummer som legges i URL via startopp program
-?>
 <html>
-<style>
-<?php include'RasPi.css'; ?>
-</style>
+<?php
+  $Table = $_GET["ID"]; // Hvert bord vil ha ett bordnummer som legges i URL via startopp program
+?>
 <head>
 </head>
 <body>
-<form method="post" action="/LoginAction.php">
-    <input type="hidden" value = "<?php echo $Table; ?>" name="TableID">
+<strong>Skriv inn navn først. Deretter scan kort</strong><br>
+<form method="post" action="Reg.php">
+  <input type="hidden" name="ID" value="<?php echo $Table ?>">
   <label>
-    Key <br>
-    <input type="password" name="UserKey" id="input">
+    Navn <br>
+    <input type="text" name="UserName">
   </label> <br>
   <label>
-  <input type="submit" value="Logg Inn" name="LogVal"> <br>
+    Key <br>
+    <input type="text" name="UserKey" id="input">
+  </label> <br>
+  <input type="submit" name="Submit"> <br>
 </form>
 </body>
 </html>
-<script type="text/javascript">
-window.addEventListener("keydown", function (event) { 
+<script>
+  window.addEventListener("keydown", function (event) { 
   if (event.defaultPrevented) {
     return; // Do nothing if the event was already processed
   }

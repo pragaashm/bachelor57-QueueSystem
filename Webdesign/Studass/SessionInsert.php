@@ -14,7 +14,7 @@
 		$remove_query = "UPDATE TableList SET TableSessionID = NULL WHERE TableID = '$Plass'"; //fjerner alle tidligere bord med den session
 		$tilkobling -> query($remove_query);
 	};
-	$update_query = "UPDATE TableList SET TableSessionID = '$sessionID' WHERE TableID in ('$Plasser')"; //legger til de nye bordene
+	$update_query = "UPDATE TableList SET TableSessionID = '$sessionID' WHERE TableID in ($Plasser)"; //legger til de nye bordene
 	$tilkobling -> query($update_query);
 
 	header("Location: /StudassMain.php");
