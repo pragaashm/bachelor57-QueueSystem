@@ -1,7 +1,8 @@
-# Serverbasert køsystem med adgangskontroll / Server-based queueing system with access control .
-## Bachelorgroup 57 
+# Serverbasert køsystem med adgangskontroll / Server-based queueing system with access control
+### Bachelorgruppe 57 / Bachelorgroup 57
 
 ###### NTNU - IES
+
 
 #### Sammendrag
 Institutt for elektroniske systemer (IES) ønsker å bygge et kø- og adgangssystem på
