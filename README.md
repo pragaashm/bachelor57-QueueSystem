@@ -35,3 +35,12 @@ cable channel.
 ----
 Keywords:
 RFID, Raspberry Pi, Web development, Touchscreen, Queuing system
+----
+
+###### Demonstration of system
+
+
+
+https://user-images.githubusercontent.com/80519963/145994896-de1d9dcd-3841-4b00-b508-2a60715e110a.mp4
+
+
